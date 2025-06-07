@@ -7,7 +7,7 @@ export const team: TeamMember[] = [
     role: 'Creative Director & Digital Marketing Specialist',
     email: 'gomuse65@gmail.com',
     phone: '0743402487',
-    image: 'https://openart.ai/community/2AHj3fW5OHl4Gc1Pzqmr',
+    image: 'https://i.postimg.cc/c4HQ0rpy/omuse.jpg',
     division: 'creative'
   },
   {
@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
     role: 'Cloud Engineer',
     email: 'nyamburatyra453@gmail.com',
     phone: '0745811338',
-    image: 'https://www.pinterest.com/pin/211174977404433/',
+    image: 'https://i.postimg.cc/pLL1NWZp/tyra.jpg',
     division: 'cloud'
   }
 ];

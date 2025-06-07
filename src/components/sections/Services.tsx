@@ -106,36 +106,7 @@ const Services: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Division Leaders */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="bg-gradient-to-br from-secondary-900 to-secondary-800 text-white p-8 rounded-lg"
-          >
-            <h3 className="text-xl text-green-400 font-semibold mb-4">Creative and Marketing Division</h3>
-            <p className="mb-4">Led by Geoffrey Omuse, our Creative and Marketing Division delivers stunning visual designs, effective digital marketing strategies, and engaging web experiences.</p>
-            <a href="#team" className="text-primary-400 hover:text-primary-300 font-medium inline-flex items-center">
-              Meet Omuse <span className="ml-1">→</span>
-            </a>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="bg-gradient-to-br from-primary-700 to-primary-800 text-white p-8 rounded-lg"
-          >
-            <h3 className="text-xl font-semibold mb-4">Cloud Engineering Division</h3>
-            <p className="mb-4">Led by Tyra Nyambura, our Cloud Engineering Division provides scalable cloud solutions, infrastructure optimization, and technical excellence.</p>
-            <a href="#team" className="text-white hover:text-primary-200 font-medium inline-flex items-center">
-              Meet Tyra <span className="ml-1">→</span>
-            </a>
-          </motion.div>
         </div>
-      </div>
     </section>
   );
 };

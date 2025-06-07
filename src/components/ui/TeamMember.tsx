@@ -7,6 +7,7 @@ interface TeamMemberProps {
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({ member }) => {
+  
   return (
     <div className={`card overflow-hidden group ${
       member.division === 'creative' 

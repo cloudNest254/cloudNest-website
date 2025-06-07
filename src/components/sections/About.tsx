@@ -95,7 +95,7 @@ const About: React.FC = () => {
           >
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.pexels.com/photos/3182811/pexels-photo-3182811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src="https://i.postimg.cc/9MKLMCCT/Safeguard-Your-Business-with-Cloud-Backup-and-Managed-Services-in-Lexington.jpg" 
                 alt="CloudNest Team" 
                 className="w-full h-auto"
               />
