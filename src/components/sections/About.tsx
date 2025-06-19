@@ -37,7 +37,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="about" className="py-30 bg-gradient-to-b from-white to-gray-50">
       <div className="section-container">
         <div className="text-center mb-16">
           <motion.h2 

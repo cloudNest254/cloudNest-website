@@ -35,9 +35,9 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-30 bg-white">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-24">
           <motion.h2 
             className="section-title inline-block text-center mx-auto"
             initial={{ opacity: 0, y: -20 }}

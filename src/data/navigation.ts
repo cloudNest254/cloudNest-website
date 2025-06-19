@@ -17,6 +17,11 @@ export const navLinks: NavLink[] = [
     path: '#services'
   },
   {
+    id: 'projects',
+    label: 'Projects',
+    path: '#projects'
+  },
+  {
     id: 'team',
     label: 'Our Team',
     path: '#team'
