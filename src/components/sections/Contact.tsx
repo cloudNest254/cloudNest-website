@@ -11,10 +11,21 @@ const Contact: React.FC = () => {
   });
 
   const form = useRef<HTMLFormElement>(null);
+  const [successMessageVisible, setSuccessMessageVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-  const sendEmail = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
+    // Use emailjs for form submission
     emailjs
       .sendForm('service_fdwrnj5', 'template_6uwu43m', form.current!, {
         publicKey: 'VBEB9vOTtWbtL9WDj',
@@ -22,13 +33,30 @@ const Contact: React.FC = () => {
       .then(
         () => {
           console.log('SUCCESS!');
-          alert('Message sent successfully!');
+          setSuccessMessageVisible(true);
+          setSubmitSuccess(true);
+          setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form data
+          setIsSubmitting(false); // Reset loading state
+
+          // Reset success message after 5 seconds
+          setTimeout(() => {
+            setSubmitSuccess(false);
+          }, 5000);
         },
         (error) => {
           console.log('FAILED...', error.text);
+          setIsSubmitting(false); // Reset loading state
           alert('Failed to send message. Please try again later.');
         },
       );
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   return (
@@ -109,24 +137,61 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            <form ref={form} onSubmit={sendEmail}>
-              <label className="block text-sm font-medium text-secondary-700 mb-2">Name</label>
+            {submitSuccess && (
+              <div className="mb-4 p-4 bg-green-100 text-green-800 rounded-md">
+                Thank you for your message! We'll get back to you shortly.
+              </div>
+            )}
+            <form ref={form} onSubmit={handleSubmit}>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
+                Full Name <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
-                name="user_name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 mb-4"
+                placeholder="Tyra Nyambura"
               />
-              <label className="block text-sm font-medium text-secondary-700 mb-2">Email</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
+                Email Address<span className="text-red-500">*</span>
+              </label>
               <input
                 type="email"
-                name="user_email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 mb-4"
+                placeholder="cloudnest@support"
               />
-              <label className="block text-sm font-medium text-secondary-700 mb-2">Message</label>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
+                Subject <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              >
+                <option value="">Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Creative Services">Creative Services</option>
+                <option value="Cloud Engineering">Cloud Engineering</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Other">Other</option>
+              </select>
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
+                Message <span className="text-red-500">*</span>
+              </label>
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 required
                 rows={5}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 mb-4"
@@ -134,10 +199,11 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 className="btn btn-primary w-full"
+                disabled={isSubmitting}
               >
                 <span className="flex items-center justify-center">
                   <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </span>
               </button>
             </form>
