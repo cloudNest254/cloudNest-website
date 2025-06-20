@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 bg-gradient-to-b from-white to-gray-50">
+    <section id="projects" className="py-150 bg-gradient-to-b from-gray-100 to-gray-50">
       <div className="section-container">
         <div className="text-center mb-16">
           <motion.h2 

@@ -37,9 +37,9 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-30 bg-gradient-to-b from-white to-gray-50">
+    <section id="about" className="py-150 bg-gradient-to-b from-white to-gray-50">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h2 
             className="section-title inline-block text-center mx-auto"
             initial={{ opacity: 0, y: -20 }}
@@ -49,7 +49,7 @@ const About: React.FC = () => {
             About Us
           </motion.h2>
           <motion.p 
-            className="section-subtitle mx-auto"
+            className="section-subtitle mx-auto mt-2"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}

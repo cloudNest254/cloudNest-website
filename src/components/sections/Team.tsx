@@ -11,11 +11,11 @@ const Team: React.FC = () => {
   });
 
   return (
-    <section id="team" className="py-30 bg-gray-50">
+    <section id="team" className="py-50 bg-gray-100">
       <div className="section-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.h2 
-            className="section-title inline-block text-center mx-auto"
+            className="section-title inline-block text-center mx-auto my-0"
             initial={{ opacity: 0, y: -20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
@@ -23,7 +23,7 @@ const Team: React.FC = () => {
             Our Team
           </motion.h2>
           <motion.p 
-            className="section-subtitle mx-auto"
+            className="section-subtitle mx-auto mt-4"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -52,10 +52,10 @@ const Team: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
           <h3 className="text-2xl font-semibold mb-4">Join Our Team</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
             We're always looking for talented individuals to join our growing team. If you're passionate about creating innovative solutions and delivering exceptional results, we'd love to hear from you.
           </p>
           <a 
