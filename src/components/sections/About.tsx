@@ -39,7 +39,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-150 bg-gradient-to-b from-white to-gray-50">
       <div className="section-container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mt-0">
           <motion.h2 
             className="section-title inline-block text-center mx-auto"
             initial={{ opacity: 0, y: -20 }}

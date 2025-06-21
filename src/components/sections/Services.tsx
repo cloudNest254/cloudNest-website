@@ -35,11 +35,11 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-30 bg-white">
+    <section id="services" className="py-50 bg-white">
       <div className="section-container">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 mt-0">
           <motion.h2 
-            className="section-title inline-block text-center mx-auto"
+            className="section-title inline-block text-center mb-4 mt-0"
             initial={{ opacity: 0, y: -20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
@@ -57,7 +57,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Service Tabs */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-12 mt-0">
           <div className="inline-flex bg-gray-100 rounded-lg p-1">
             <button
               onClick={() => setActiveTab('all')}
