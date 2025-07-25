@@ -5,7 +5,7 @@ export const projects = [
     description: 'Seamless migration of legacy infrastructure to a scalable cloud environment, reducing operational costs by 40% while improving system reliability.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80',
     url: 'https://example.com/project1',
-    technologies: ['AWS', 'Terraform', 'Docker', 'Kubernetes']
+    technologies: ['Azure', 'Terraform', 'Docker', 'Kubernetes']
   },
   {
     id: 2,
