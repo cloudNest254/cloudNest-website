@@ -24,7 +24,7 @@ export const team: TeamMember[] = [
     name: 'Kiptum Victor',
     role: 'Software Engineer, DevOps Specialist, CI/CD Expert, Cloud Automation Engineer',
     email: 'kiptumvictor@gmail.com',
-    phone: '+254732572192',
+    phone: '0732572192',
     image: 'https://i.postimg.cc/RFqn3LBD/vic.jpg',
     division: 'cloud'
   },
@@ -33,7 +33,7 @@ export const team: TeamMember[] = [
     name: 'Myra ayiera',
     role: 'Software Developer, creative strategist & Digital Marketing Specialist',
     email: 'ayieramyra@gmail.com',
-    phone: '+254 740 958201',
+    phone: '0740958201',
     image: 'https://i.postimg.cc/VvCrgs59/myra.jpg',
     division: 'creative'
   }

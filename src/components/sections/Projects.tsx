@@ -66,11 +66,24 @@ const Projects: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-800">
+              {/*<a href={project.url} target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:text-primary-800">
                 View Project
-              </a>
+              </a>*/}
             </motion.div>
           ))}
+        </div>
+
+        {/* Add the View Projects link here */}
+        <div className="text-center mt-16">
+          <a
+            href="https://omuse10.github.io/vision-swipe/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-500 hover:text-primary-800 text-lg font-medium"
+          ><button>
+            View All Projects
+          </button>
+          </a>
         </div>
       </div>
     </section>
